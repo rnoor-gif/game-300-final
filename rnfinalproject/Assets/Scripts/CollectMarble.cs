@@ -6,14 +6,12 @@ public class CollectMarble : MonoBehaviour
 {
     
     private Rigidbody marbleRb;
-    private ParticleSystem collectEffect;
     
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         marbleRb = GetComponent<Rigidbody>();
-        collectEffect = GetComponent<ParticleSystem>();
     }
 
     // Update is called once per frame
@@ -26,7 +24,6 @@ public class CollectMarble : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            collectEffect.Play();
             Destroy(gameObject);
         }
     }
