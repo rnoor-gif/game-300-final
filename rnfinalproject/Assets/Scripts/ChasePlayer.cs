@@ -28,7 +28,7 @@ public class ChasePlayer : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Ground"))
         {
-            enemyRb.AddForce(Vector3.up * 5, ForceMode.Impulse);
+            enemyRb.AddForce(Vector3.up * 8, ForceMode.Impulse);
         }
     }
 
