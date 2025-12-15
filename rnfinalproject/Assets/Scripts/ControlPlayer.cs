@@ -56,6 +56,7 @@ public class ControlPlayer : MonoBehaviour
             gameManager.UpdateCount(1);
             Destroy(other.gameObject);
         }
+        
     }
 
     void OnCollisionEnter(Collision collision)
@@ -64,6 +65,10 @@ public class ControlPlayer : MonoBehaviour
         {
             isOnGround = true;
         }
-    }
 
+        else if (collision.gameObject.CompareTag("Enemy"))
+        {
+            gameManager.GameOver();
+        }
+    }
 }
