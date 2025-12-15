@@ -11,11 +11,15 @@ public class ControlPlayer : MonoBehaviour
     public float jumpPow = 10.0f;
 
     public bool isOnGround = true;
+
+    public GameManager gameManager;
     
     void Start()
     {
         playerRb = GetComponent<Rigidbody>();
         Physics.gravity *= playerGravi;
+
+        gameManager = FindObjectOfType<GameManager>();
     }
 
     
@@ -42,6 +46,15 @@ public class ControlPlayer : MonoBehaviour
         {
             playerRb.AddForce(Vector3.up * jumpPow, ForceMode.Impulse);
             isOnGround = false;
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.CompareTag("Marble"))
+        {
+            gameManager.UpdateCount(1);
+            Destroy(other.gameObject);
         }
     }
 
