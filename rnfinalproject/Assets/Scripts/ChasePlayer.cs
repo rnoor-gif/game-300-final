@@ -5,7 +5,7 @@ using System.Collections.Generic;
 public class ChasePlayer : MonoBehaviour
 {
     
-    public float chaseSpeed = 8.0f;
+    public float chaseSpeed = 9.0f;
     private Rigidbody enemyRb;
     private GameObject player;
 
@@ -28,7 +28,7 @@ public class ChasePlayer : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Ground"))
         {
-            enemyRb.AddForce(Vector3.up * 8, ForceMode.Impulse);
+            enemyRb.AddForce(Vector3.up * 10, ForceMode.Impulse);
         }
     }
 

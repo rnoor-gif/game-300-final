@@ -68,6 +68,7 @@ public class ControlPlayer : MonoBehaviour
 
         else if (collision.gameObject.CompareTag("Enemy"))
         {
+            Destroy(this.gameObject);
             gameManager.GameOver();
         }
     }
